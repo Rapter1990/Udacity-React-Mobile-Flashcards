@@ -2,11 +2,11 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
 import { Ionicons } from '@expo/vector-icons';
-import Decks from './Decks';
-import NewDeck from './NewDeck';
-import DeckDetails from './DeckDetails';
-import NewCard from './NewCard';
-import Quiz from './Quiz';
+import Decks from '../Decks/Decks';
+import NewDeck from '../NewDeck/NewDeck';
+import DeckDetails from '../DeckDetails/DeckDetails';
+import NewCard from '../NewCard/NewCard';
+import Quiz from '../Quiz/Quiz';
 
 
 const Tabs = createBottomTabNavigator(
