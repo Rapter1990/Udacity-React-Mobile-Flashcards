@@ -1,17 +1,16 @@
-import React from 'react';
+import React,{ Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 import setNotification from './utils/notification';
 import store from './store'
-import getAllDecks from './actions/index'
-import HomeScreen from './components/HomeScreen/index'
-import { Provider } from "react-redux";
+import HomeScreen from './components/HomeScreen'
+import { Provider } from 'react-redux';
 
-export default class App extends React.Component {
+export default class App extends Component {
   
   componentDidMount() {
-    store.dispatch(getAllDecks());
     setNotification();
   }
+
   render() {
       return (
           <Provider store={store}>
