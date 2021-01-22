@@ -3,6 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import setNotification from './utils/notification';
 import store from './store'
 import getAllDecks from './actions/index'
+import HomeScreen from './components/HomeScreen/index'
 
 export default class App extends React.Component {
   
@@ -14,7 +15,7 @@ export default class App extends React.Component {
       return (
           <Provider store={store}>
               <View style={styles.container}>
-                  
+                <HomeScreen />
               </View>
           </Provider>
       );
