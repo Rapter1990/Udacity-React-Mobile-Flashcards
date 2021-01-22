@@ -1,6 +1,6 @@
 import React,{ Component } from 'react';
 import { StyleSheet, View } from 'react-native';
-import setLocalNotification from './utils/notification';
+import { setLocalNotification } from './utils/notification';
 import store from './store'
 import HomeScreen from './components/HomeScreen'
 import { Provider } from 'react-redux';
