@@ -1,3 +1,4 @@
+import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
@@ -7,6 +8,7 @@ import NewDeck from '../NewDeck/NewDeck';
 import DeckDetails from '../DeckDetails/DeckDetails';
 import NewCard from '../NewCard/NewCard';
 import Quiz from '../Quiz/Quiz';
+import {white , azure } from '../../utils/colors'
 
 
 const Tabs = createBottomTabNavigator(

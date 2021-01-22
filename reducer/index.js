@@ -5,12 +5,12 @@ import {
     REMOVE_DECK,
     RESET_DATA
   } from "../actions/index";
-import { decks } from "../utils/_DATA";
+import { decksList } from "../utils/_DATA";
 
 
-const initialState = decks;
+const initialState = decksList;
 
-export function decks(state = initialState, action) {
+function decks(state = initialState, action) {
     
     switch (action.type) {
       case RECEIVE_DECKS:
@@ -53,4 +53,6 @@ export function decks(state = initialState, action) {
         return state;
     }
 }
+
+export default decks;
   

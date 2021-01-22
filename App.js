@@ -4,6 +4,7 @@ import setNotification from './utils/notification';
 import store from './store'
 import getAllDecks from './actions/index'
 import HomeScreen from './components/HomeScreen/index'
+import { Provider } from "react-redux";
 
 export default class App extends React.Component {
   

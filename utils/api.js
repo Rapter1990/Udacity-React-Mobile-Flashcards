@@ -1,5 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import { decks } from './_DATA';
+import { decksList } from './_DATA';
 
 export const DECK_STORAGE_KEY = "mobileflashcards:decks"
 
@@ -11,9 +11,9 @@ export async function getDecks () {
     try {
         const data  = await AsyncStorage.getItem(DECK_STORAGE_KEY);
         if (data  === null) {
-          AsyncStorage.setItem(DECK_STORAGE_KEY, JSON.stringify(decks));
+          AsyncStorage.setItem(DECK_STORAGE_KEY, JSON.stringify(decksList));
         }
-        return data  === null ? decks : JSON.parse(data);
+        return data  === null ? decksList : JSON.parse(data);
     } catch (err) {
         console.log(err);
     }
@@ -61,11 +61,11 @@ export async function saveDeckTitle(title) {
 export async function removeDeckFromStorage(id) {
     try {
       const decksData = await AsyncStorage.getItem(DECK_STORAGE_KEY);
-      const decks = JSON.parse(decksData);
+      const decksList = JSON.parse(decksData);
   
-      decks[id] = undefined;
-      delete decks[id];
-      await AsyncStorage.setItem(DECK_STORAGE_KEY, JSON.stringify(decks));
+      decksList[id] = undefined;
+      delete decksList[id];
+      await AsyncStorage.setItem(DECK_STORAGE_KEY, JSON.stringify(decksList));
     } catch (e) {
       console.log(e);
     }
@@ -98,7 +98,7 @@ export async function addCardToDeck(title, card) {
  */
 export async function resetDecks() {
     try {
-      await AsyncStorage.setItem(DECK_STORAGE_KEY, JSON.stringify(decks));
+      await AsyncStorage.setItem(DECK_STORAGE_KEY, JSON.stringify(decksList));
     } catch (err) {
       console.log(err);
     }
