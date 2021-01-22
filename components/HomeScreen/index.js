@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import { View, StatusBar } from 'react-native';
 import Constants from 'expo-constants';
-import MainNavigator from './components/Navigation/MainNavigator';
+import MainNavigator from '../Navigation/index';
 
 
 function MainStatusBar ({backgroundColor, ...props}) {
@@ -12,7 +12,7 @@ function MainStatusBar ({backgroundColor, ...props}) {
     )
 }
 
-const StatusBarNavigation =(props)=> {
+const HomeScreen =(props)=> {
     return (
         <Fragment>
             <MainStatusBar
@@ -24,4 +24,4 @@ const StatusBarNavigation =(props)=> {
     );
 }
 
-export default StatusBarNavigation;
+export default HomeScreen;
