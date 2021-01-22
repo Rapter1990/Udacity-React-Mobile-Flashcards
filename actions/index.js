@@ -43,7 +43,8 @@ export const resetData = () => ({
 export const getAllDecks = () => async(dispatch) => {
     try {
         getDecks().then(decks => {
-            dispatch(receiveDecksAction(decks)))
+            dispatch(receiveDecksAction(decks))
+        })
     } 
     catch(error) {
         console.error('Error reading decks from file', error);
