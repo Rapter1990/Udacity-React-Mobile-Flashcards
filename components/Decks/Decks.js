@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import Deck from '../Deck';
 
 
-export default class Decks extends Component {
+class Decks extends Component {
 
     componentDidMount() {
         this.props.getAllDecks();
@@ -13,8 +13,7 @@ export default class Decks extends Component {
     
     render() {
 
-        const { decks } = this.props;
-        console.log(decks);
+        const { decks, navigation} = this.props;
 
         return (
             <View>
@@ -23,3 +22,15 @@ export default class Decks extends Component {
         )
     }
 }
+
+// refer to reducers/index.js
+const mapStateToProps = state => ({ decks: state });
+
+// refer to acions/index.js
+const mapDispatchToProps = (dispatch) => (
+    {
+       getAllDecks: () => dispatch(getAllDecks()),
+    }
+)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Decks);
