@@ -9,7 +9,7 @@ class DeckDetails extends Component {
     handleDelete = id => {
         const { removeDeck, navigation } = this.props;
         removeDeck(id);
-        navigation.goBack();
+        navigation.navigate("Decks");
     };
 
     render() {
@@ -35,7 +35,7 @@ const mapStateToProps = (state, { navigation }) => {
 
 const mapDispatchToProps = (dispatch) => (
     {
-        removeDeck: () => dispatch(removeDeck(this.props.deck.title)),
+      removeDeck: (title) => dispatch(removeDeck(title)),
     }
 )
 
