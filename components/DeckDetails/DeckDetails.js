@@ -1,8 +1,21 @@
 import React, { Component } from 'react'
 import { Text, View } from 'react-native';
+import { connect } from 'react-redux';
+import Deck from "./deck";
+import { removeDeck } from '../../actions';
 
-export default class DeckDetails extends Component {
+class DeckDetails extends Component {
+
+    handleDelete = id => {
+        const { removeDeck, navigation } = this.props;
+        removeDeck(id);
+        navigation.goBack();
+    };
+
     render() {
+
+        const { deck } = this.props;
+
         return (
             <View>
                 <Text>DeckDetails</Text>
@@ -10,3 +23,20 @@ export default class DeckDetails extends Component {
         )
     }
 }
+
+const mapStateToProps = (state, { navigation }) => {
+    const title = navigation.getParam('title', 'undefined');
+    const deck = state[title];
+  
+    return {
+      deck
+    };
+};
+
+const mapDispatchToProps = (dispatch) => (
+    {
+        removeDeck: () => dispatch(removeDeck(this.props.deck.title)),
+    }
+)
+
+export default connect(mapStateToProps,mapDispatchToProps)(DeckDetail);

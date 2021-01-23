@@ -31,8 +31,6 @@ class Decks extends Component {
 
         return (
             <ScrollView style={styles.container}>
-              <Text style={styles.title}>Udacity Mobile Flashcards</Text>
-              <Text style={styles.subTitle}>Decks</Text>
               {deckListing}
               <View style={{ marginBottom: 30 }} />
             </ScrollView>
@@ -41,18 +39,6 @@ class Decks extends Component {
 }
 
 const styles = StyleSheet.create({
-    title: {
-      fontSize: 40,
-      textAlign: 'center',
-      marginBottom: 16,
-      color: gray
-    },
-    subTitle: {
-      fontSize: 32,
-      textAlign: 'center',
-      marginBottom: 16,
-      color: gray
-    },
     container: {
       flex: 1,
       paddingTop: 16,

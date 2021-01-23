@@ -20,18 +20,18 @@ export function addDeckAction(title){
     };
 }
   
-export function addCardToDeckAction(deckId, card){
+export function addCardToDeckAction(title, card){
     return {
       type: ADD_CARD,
-      deckId,
+      title,
       card
     };
 }
   
-export function removeDeckAction(deckId){
+export function removeDeckAction(title){
     return {
         type: REMOVE_DECK,
-        deckId
+        title
     };
 }
 
@@ -60,18 +60,18 @@ export const addDeck = (title) => async(dispatch) => {
     }
 }
 
-export const addCardToTheDeck = (deckId, card) => async(dispatch) => {
+export const addCardToTheDeck = (title, card) => async(dispatch) => {
     try {
-        addCardToDeck(deckId, card).then(
-            r =>dispatch(addCardToDeckAction(deckId, card)))
+        addCardToDeck(title, card).then(
+            r =>dispatch(addCardToDeckAction(title, card)))
     } catch (error) {
         console.error('Error adding card to the deck', error);
     }
 }
 
-export const removeDeck = (deckId) => async(dispatch) => {
+export const removeDeck = (title) => async(dispatch) => {
     try {
-        removeDeckFromStorage(deckId).then(r => dispatch(removeDeckAction(deckId)))
+        removeDeckFromStorage(title).then(r => dispatch(removeDeckAction(title)))
     } catch (error) {
         console.error('Error removing deck', error);
     }
