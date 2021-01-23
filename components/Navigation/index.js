@@ -39,6 +39,15 @@ const Tabs = createBottomTabNavigator(
     }
 );
 
+Tabs.navigationOptions = ({ navigation }) => {
+  const { routeName } = navigation.state.routes[navigation.state.index];
+  
+  const headerTitle = routeName;
+  return {
+    headerTitle,
+  };
+};
+
 const MainNavigator = createStackNavigator({
     Home: {
         screen: Tabs,
