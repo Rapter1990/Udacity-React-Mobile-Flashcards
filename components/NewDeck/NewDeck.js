@@ -1,12 +1,93 @@
 import React, { Component } from 'react'
-import { Text, View } from 'react-native';
+import { connect } from 'react-redux';
+import { Text, View, StyleSheet, TextInput } from 'react-native';
 
-export default class NewDeck extends Component {
-    render() {
-        return (
-            <View>
-                <Text>NewDeck</Text>
-            </View>
-        )
+import { addDeck } from '../../actions/index';
+import CustomClickButton from '../component/CustomClickButton';
+import { white, purple, gray, lightPurp } from '../../utils/colors';
+
+class NewDeck extends Component {
+
+    state = {
+       text: ''
+    };
+      
+    handleChange = text => {
+       this.setState({ text });
+    };
+
+    handleSubmit = () => {
+
+        const { addDeck, navigation } = this.props;
+        const { text } = this.state;
+        addDeck(text);
+
+        
     }
+
+    render() {
+    return (
+      <View style={styles.container}>
+        <View style={{ height: 60 }} />
+        <View style={styles.block}>
+          <Text style={styles.title}>Write a Title of New Deck</Text>
+        </View>
+        <View style={[styles.block]}>
+          <TextInput
+            style={styles.input}
+            value={this.state.text}
+            onChangeText={this.handleChange}
+            placeholder="Deck Name"
+            autoFocus={true}
+            returnKeyType="done"
+            onSubmitEditing={this.handleSubmit}
+          />
+        </View>
+        <CustomClickButton
+          btnStyle={{ backgroundColor: lightPurp, borderColor: white }}
+          onPress={this.handleSubmit}
+          disabled={this.state.text === ''}
+        >
+          Create Deck
+        </CustomClickButton>
+      </View>
+    );
+  }
 }
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      paddingTop: 16,
+      paddingLeft: 16,
+      paddingRight: 16,
+      paddingBottom: 16,
+      backgroundColor: purple
+    },
+    block: {
+      marginBottom: 20
+    },
+    title: {
+      textAlign: 'center',
+      fontSize: 32
+    },
+    input: {
+      borderWidth: 1,
+      borderColor: gray,
+      backgroundColor: white,
+      paddingLeft: 10,
+      paddingRight: 10,
+      borderRadius: 5,
+      fontSize: 20,
+      height: 40,
+      marginBottom: 20
+    }
+});
+
+const mapDispatchToProps = (dispatch) => (
+    {
+        addDeck: (title) => dispatch(addDeck(title))
+    }
+)
+  
+export default connect(mapDispatchToProps)(NewDeck);
