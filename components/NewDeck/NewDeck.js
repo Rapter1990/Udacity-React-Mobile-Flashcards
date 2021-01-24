@@ -22,7 +22,8 @@ class NewDeck extends Component {
         const { text } = this.state;
         addDeck(text);
 
-        
+        navigation.navigate("Decks");
+        this.setState(() => ({ text: '' }));
     }
 
     render() {
