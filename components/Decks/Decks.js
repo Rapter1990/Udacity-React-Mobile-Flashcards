@@ -21,7 +21,7 @@ class Decks extends Component {
                 <TouchableOpacity
                     key={deck.title}
                     onPress={() =>
-                        navigation.navigate('DeckDetail', { title: deck.title })
+                        navigation.navigate('DeckDetails', { title: deck.title })
                     }
                 >
                   <Deck id={deck.title} />
