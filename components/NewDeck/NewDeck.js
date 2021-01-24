@@ -91,4 +91,4 @@ const mapDispatchToProps = (dispatch) => (
     }
 )
   
-export default connect(mapDispatchToProps)(NewDeck);
+export default connect(null, mapDispatchToProps)(NewDeck);
