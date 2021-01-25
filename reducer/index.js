@@ -31,17 +31,17 @@ function decks(state = initialState, action) {
         };
   
       case ADD_CARD:
-        const { deckId, card } = action;
+        const { title, card } = action;
         return {
           ...state,
-          [deckId]: {
-            ...state[deckId],
-            questions: [...state[deckId].questions].concat(card)
+          [title]: {
+            ...state[title],
+            questions: [...state[title].questions].concat(card)
           }
         };
   
       case REMOVE_DECK:
-        const { [action.deckId]: value, ...restOfState } = state;
+        const { [action.title]: value, ...restOfState } = state;
         return {
           ...restOfState
         };

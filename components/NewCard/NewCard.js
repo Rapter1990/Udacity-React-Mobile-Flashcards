@@ -22,14 +22,14 @@ class NewCard extends Component {
 
     handleSubmit = () => {
         
-        const { addCardToDeck, title, navigation } = this.props;
+        const { addCardToTheDeck, title, navigation } = this.props;
 
         const card = {
           question: this.state.question,
           answer: this.state.answer
         };
 
-        addCardToDeck(title, card);
+        addCardToTheDeck(title, card);
     
         this.setState({ question: '', answer: '' });
 
@@ -121,7 +121,7 @@ const mapStateToProps = (state, { navigation }) => {
 
 const mapDispatchToProps = (dispatch) => (
     {
-        addCardToTheDeck: (title) => dispatch(addCardToTheDeck(title))
+      addCardToTheDeck: (title, card)=>dispatch(addCardToTheDeck(title, card))
     }
 )
   
