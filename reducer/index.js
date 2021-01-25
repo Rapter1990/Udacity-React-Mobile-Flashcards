@@ -13,13 +13,13 @@ const initialState = decksList;
 function decks(state = initialState, action) {
     
     switch (action.type) {
-      case RECEIVE_DECKS:
+      case RECEIVE_DECKS: {
         return {
           ...state,
           ...action.decks
         };
-  
-      case ADD_DECK:
+      }
+      case ADD_DECK: {
         const { title } = action;
   
         return {
@@ -29,8 +29,8 @@ function decks(state = initialState, action) {
             questions: []
           }
         };
-  
-      case ADD_CARD:
+      }
+      case ADD_CARD: {
         const { title, card } = action;
         return {
           ...state,
@@ -39,16 +39,16 @@ function decks(state = initialState, action) {
             questions: [...state[title].questions].concat(card)
           }
         };
-  
-      case REMOVE_DECK:
+      }
+      case REMOVE_DECK: {
         const { [action.title]: value, ...restOfState } = state;
         return {
           ...restOfState
         };
-  
-      case RESET_DATA:
+      }
+      case RESET_DATA: {
         return startingDecks;
-  
+      }
       default:
         return state;
     }
