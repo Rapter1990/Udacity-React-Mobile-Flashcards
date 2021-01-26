@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
-import { Text, View } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 import { clearLocalNotification, setLocalNotification } from '../../utils/notification';
 import QuizError from "./QuizError";
 import QuizResult from './QuizResult';
+import { gray, white, red, green,  azure  } from '../../utils/colors';
+import CustomClickButton from "../component/CustomClickButton"
+import TextButton from "../component/TextButton"
 
 class Quiz extends Component {
 
@@ -14,9 +17,10 @@ class Quiz extends Component {
         correctAnswer: 0,
         incorrectAnswer: 0,
         questionNumber: 0,
-        numberOfQuestions: this.props.deck.questions.length,
+        numberOfQuestions: 0,
         score: 0,
-        quizFinished: false
+        quizFinished: false,
+        errorShow: false
     }
 
     resetQuiz = () => {
@@ -26,14 +30,31 @@ class Quiz extends Component {
           currentAnswer: '',
           correctAnswer: 0,
           incorrectAnswer: 0,
-          questionNumber: 1,
+          questionNumber: 0,
           score: 0,
           quizFinished: false,
+          errorShow: false
         });
     }
 
     componentDidMount() {
         clearLocalNotification().then(setLocalNotification);
+    }
+
+    componentWillMount() {
+        const { navigation} = this.props;
+        const title = navigation.getParam('title', 'undefined');
+        const questions = this.props.deck[title].questions;
+
+        this.setState({
+            title: this.props.navigation.state.params.title,
+            currentQuestion: questions[0].question,
+            questionNumber: 1,
+            numberOfQuestions: questions.length,
+            questions: questions,
+            quizFinished: false,
+            errorShow: false
+        })
     }
 
     updateScore = () => {
@@ -43,46 +64,188 @@ class Quiz extends Component {
         })
     }
 
+    showAnswer = () => {
+        if (this.state.currentAnswer === '')
+          this.setState({
+            currentAnswer: this.state.questions[this.state.questionNumber-1].answer,
+        })
+    }
+
+    nextQuestion = (isCorrect) => {
+
+        if (this.state.currentAnswer === '') {
+            this.setState({
+                errorShow: true
+            });
+        }
+        else {
+            if (isCorrect) {
+
+                this.setState({
+                    correctAnswer: this.state.correctAnswer + 1
+                });
+
+                this.updateScore();
+            }else {
+    
+                this.setState({
+                    incorrectAnswer: this.state.incorrectAnswer + 1
+                })
+
+            }
+        }
+        
+        this.updateQuestion();
+    }
+
+    updateQuestion = () => {
+        const newQuestionNumber = this.state.questionNumber + 1;
+        if (newQuestionNumber-1 < this.state.numberOfQuestions) {
+            this.setState({
+              currentAnswer: '',
+              currentQuestion: this.state.questions[newQuestionNumber-1].question,
+              questionNumber: newQuestionNumber,
+            });
+        } else {
+            this.setState({
+              quizFinished: true
+            })
+        }
+    }
+
     backToDeckDetails = () => {
         this.props.navigation.navigate(
-          'DeckDetails'
+          'Decks'
         );
     }
 
     render() {
 
-        const { navigation, questions} = this.props;
-        const title = navigation.getParam('title', 'undefined');
-
-        console.log(title);
-
-        if (questions.length === 0) {
+        if (this.props.deck[this.state.title].questions.length === 0) {
             return <QuizError />;
         }
 
         if (this.state.quizFinished == true) {
-            const { correctAnswer, incorrectAnswer , numberOfQuestions } = this.state;
-            const scrorePercentValue = ((correctAnswer / numberOfQuestions) * 100).toFixed(0);
-
+            const { correctAnswer, incorrectAnswer , numberOfQuestions, score } = this.state;
+            const scorePercentValue = ((correctAnswer / numberOfQuestions) * 100).toFixed(0);
+            
             return (
                 <QuizResult
                     deck={deck}
                     navigation={this.props.navigation}
                     handleReset={this.resetQuiz}
-                    percent={scrorePercentValue}
-                    coorectAnswer = {correctAnswer}
+                    percent={scorePercentValue}
+                    correctAnswer = {correctAnswer}
                     incorrectAnswer = {incorrectAnswer}
+                    score = {score}
+                    returnBack = {this.backToDeckDetails}
                 />
             );
         }
 
         return (
-            <View>
-                <Text>Quiz</Text>
+
+            <View style={{flex:1, justifyContent: 'space-between'}}>
+                <View style={styles.header}>
+                    <Text style={{fontSize: 20, alignItems: 'flex-start'}}>{this.state.title} Quiz</Text>
+                    <Text style={{fontSize: 20, alignItems: 'flex-end'}}>Score: {this.state.score}</Text>
+                </View>
+
+                <View>
+                    <View>
+                        <Text style={styles.titleText}>Question {this.state.questionNumber} of {this.state.numberOfQuestions}</Text>
+                    </View>
+                    <Text style={styles.questionText}>
+                        {this.state.currentQuestion}
+                    </Text>
+                    <TextButton style={[styles.container, styles.buttonText]} 
+                                onPress={() => this.showAnswer()}>
+                                Answer
+                    </TextButton>
+                    <Text style={styles.questionText}>
+                          {this.state.currentAnswer}
+                    </Text>
+
+                    <CustomClickButton
+                        btnStyle={{ backgroundColor: green, borderColor: white }}
+                        onPress={() => () => this.nextQuestion(true) }
+                        disabled={this.state.quizFinished == true}
+                    >
+                        Correct
+                    </CustomClickButton>
+
+                    <CustomClickButton
+                        btnStyle={{ backgroundColor: red, borderColor: white }}
+                        onPress={() => this.nextQuestion(false)}
+                        disabled={this.state.quizFinished == true}
+                    >
+                        InCorrect
+                    </CustomClickButton>
+
+                    { this.state.errorShow &&
+                        <Text style={styles.questionText}>
+                            Please, click answer first
+                        </Text>
+                    }
+        ?
+
+                </View>
+
             </View>
         )
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        backgroundColor: azure,
+        borderRadius: Platform.OS === 'ios' ? 16 : 2,
+        padding: 20,
+        marginLeft: 10,
+        marginRight: 10,
+        marginTop: 17,
+        marginBottom: 17,
+        justifyContent: 'center',
+        alignItems: 'center',
+        shadowRadius: 3,
+        shadowOpacity: 0.8,
+        shadowColor: 'rgba(0, 0, 0, 0.24)',
+        shadowOffset: {
+          width: 0,
+          height: 3
+        },
+    },
+    header: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+    },
+    titleText: {
+        fontSize: 30,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        paddingTop: 30,
+        paddingBottom: 20,
+    },
+    questionText: {
+        fontSize: 20,
+        fontWeight: 'normal',
+        color: white,
+        paddingLeft: 20,
+        paddingRight: 20,
+        paddingTop: 20,
+        paddingBottom: 20,
+    },
+    buttonText: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        color: white,
+        backgroundColor: azure,
+        paddingTop: 20,
+        paddingBottom: 20,
+        padding: 20
+    }
+});
 
 const mapStateToProps = (state, { title }) => {
     const deck = state[title];
