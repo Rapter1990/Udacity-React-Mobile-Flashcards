@@ -20,7 +20,8 @@ class Quiz extends Component {
         numberOfQuestions: 0,
         score: 0,
         quizFinished: false,
-        errorShow: false
+        errorShow: false,
+        question: ''
     }
 
     resetQuiz = () => {
@@ -33,7 +34,8 @@ class Quiz extends Component {
           questionNumber: 0,
           score: 0,
           quizFinished: false,
-          errorShow: false
+          errorShow: false,
+          question: ''
         });
     }
 
@@ -42,16 +44,18 @@ class Quiz extends Component {
     }
 
     componentWillMount() {
-        const { navigation} = this.props;
+        const { navigation, deck } = this.props;
         const title = navigation.getParam('title', 'undefined');
-        const questions = this.props.deck[title].questions;
+        const questions = deck.questions;
+
+        console.log(questions);
 
         this.setState({
-            title: this.props.navigation.state.params.title,
+            title: title,
             currentQuestion: questions[0].question,
             questionNumber: 1,
+            question: questions,
             numberOfQuestions: questions.length,
-            questions: questions,
             quizFinished: false,
             errorShow: false
         })
@@ -121,7 +125,7 @@ class Quiz extends Component {
 
     render() {
 
-        if (this.props.deck[this.state.title].questions.length === 0) {
+        if (this.props.deck.questions.length === 0) {
             return <QuizError />;
         }
 
@@ -187,7 +191,6 @@ class Quiz extends Component {
                             Please, click answer first
                         </Text>
                     }
-        ?
 
                 </View>
 
@@ -247,12 +250,14 @@ const styles = StyleSheet.create({
     }
 });
 
-const mapStateToProps = (state, { title }) => {
+const mapStateToProps = (state, { navigation }) => {
+    const title = navigation.getParam('title', 'undefined');
     const deck = state[title];
   
     return {
       deck
     };
 };
+
 
 export default connect(mapStateToProps)(Quiz);
