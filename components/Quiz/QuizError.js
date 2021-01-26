@@ -4,16 +4,20 @@ import { purple } from '../../utils/colors';
 
 class QuizError extends Component {
     render() {
-        <View style={styles.pageStyle}>
-            <View style={styles.block}>
-                <Text style={[styles.count, { textAlign: 'center' }]}>
-                    You cannot take a quiz because there are no cards in the deck.
-                </Text>
-                <Text style={[styles.count, { textAlign: 'center' }]}>
-                    Please add some cards and try again.
-                </Text>
+        return (
+
+            <View style={styles.pageStyle}>
+                <View style={styles.block}>
+                    <Text style={[styles.count, { textAlign: 'center' }]}>
+                        You cannot take a quiz because there are no cards in the deck.
+                    </Text>
+                    <Text style={[styles.count, { textAlign: 'center' }]}>
+                        Please add some cards and try again.
+                    </Text>
+                </View>
             </View>
-        </View>
+
+        );
     }
 }
 

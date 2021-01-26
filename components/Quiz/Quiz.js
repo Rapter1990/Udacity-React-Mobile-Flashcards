@@ -47,10 +47,15 @@ class Quiz extends Component {
         const { navigation, deck } = this.props;
         const title = navigation.getParam('title', 'undefined');
         const questions = deck.questions;
+        const currentQuestion = "";
+
+        if(questions.length != 0) {
+            currentQuestion = questions[0].question;
+        }
 
         this.setState({
             title: title,
-            currentQuestion: questions[0].question,
+            currentQuestion: currentQuestion,
             questionNumber: 1,
             questions: questions,
             numberOfQuestions: questions.length,
