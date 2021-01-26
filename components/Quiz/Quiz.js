@@ -123,7 +123,7 @@ class Quiz extends Component {
 
     render() {
 
-        if (this.props.deck.questions.length === 0) {
+        if (this.state.numberOfQuestions === 0) {
             return <QuizError />;
         }
 
