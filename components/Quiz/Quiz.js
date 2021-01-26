@@ -21,7 +21,7 @@ class Quiz extends Component {
         score: 0,
         quizFinished: false,
         errorShow: false,
-        question: ''
+        questions: ''
     }
 
     resetQuiz = () => {
@@ -35,7 +35,7 @@ class Quiz extends Component {
           score: 0,
           quizFinished: false,
           errorShow: false,
-          question: ''
+          questions: ''
         });
     }
 
@@ -48,13 +48,11 @@ class Quiz extends Component {
         const title = navigation.getParam('title', 'undefined');
         const questions = deck.questions;
 
-        console.log(questions);
-
         this.setState({
             title: title,
             currentQuestion: questions[0].question,
             questionNumber: 1,
-            question: questions,
+            questions: questions,
             numberOfQuestions: questions.length,
             quizFinished: false,
             errorShow: false
