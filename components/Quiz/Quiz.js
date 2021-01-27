@@ -27,15 +27,14 @@ class Quiz extends Component {
     resetQuiz = () => {
         this.setState({
           title: '',  
-          currentQuestion: '',
+          currentQuestion: this.state.questions[0].question,
           currentAnswer: '',
           correctAnswer: 0,
           incorrectAnswer: 0,
-          questionNumber: 0,
+          questionNumber: 1,
           score: 0,
           quizFinished: false,
           errorShow: false,
-          questions: ''
         });
     }
 
