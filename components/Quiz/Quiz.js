@@ -26,8 +26,8 @@ class Quiz extends Component {
 
     resetQuiz = () => {
         this.setState({
-          title: this.state.questions[0].title,  
-          currentQuestion: this.state.questions[0].question,
+          title: '',  
+          currentQuestion: '',
           currentAnswer: '',
           correctAnswer: 0,
           incorrectAnswer: 0,
