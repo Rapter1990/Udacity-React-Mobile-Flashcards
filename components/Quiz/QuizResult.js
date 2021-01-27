@@ -6,9 +6,19 @@ import CustomClickButton from "../component/CustomClickButton"
 class QuizResult extends Component {
 
 
+    state = {
+        status: true
+    }
+
     render() {
 
-        const {deck, handleReset, returnBack, percent, correctAnswer , incorrectAnswer, score } = this.props;
+        const {deck, handleReset, returnBack, percent, correctAnswer , incorrectAnswer, score, quizFinished } = this.props;
+
+        if(quizFinished == true) {
+            this.setState({
+                status: false
+            })
+        }
 
         return (
             <View>
@@ -24,7 +34,7 @@ class QuizResult extends Component {
                 <CustomClickButton
                         btnStyle={{ backgroundColor: green, borderColor: white }}
                         onPress={() => handleReset()}
-                        disabled={this.state.quizFinished == true}
+                        disabled={this.state.status == true}
                     >
                         Reset Quiz
                 </CustomClickButton>
@@ -32,7 +42,7 @@ class QuizResult extends Component {
                 <CustomClickButton
                         btnStyle={{ backgroundColor: green, borderColor: white }}
                         onPress={() => returnBack()}
-                        disabled={this.state.quizFinished == true}
+                        disabled={this.state.status == true}
                     >
                         Go Back
                 </CustomClickButton>

@@ -153,6 +153,7 @@ class Quiz extends Component {
                     incorrectAnswer = {incorrectAnswer}
                     score = {score}
                     returnBack = {this.backToDeckDetails}
+                    quizFinished = {quizFinished}
                 />
             );
         }
