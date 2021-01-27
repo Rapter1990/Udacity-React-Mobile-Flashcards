@@ -75,6 +75,8 @@ class Quiz extends Component {
     }
 
     nextQuestion = (isCorrect) => {
+        
+        console.log(this.state);
 
         if (this.state.currentAnswer === '') {
             this.setState({
@@ -131,8 +133,6 @@ class Quiz extends Component {
             return <QuizError />;
         }
 
-        console.log(this.state.quizFinished);
-
         if (this.state.quizFinished == true) {
             const { correctAnswer, incorrectAnswer , numberOfQuestions, score } = this.state;
             const scorePercentValue = ((correctAnswer / numberOfQuestions) * 100).toFixed(0);
@@ -178,7 +178,7 @@ class Quiz extends Component {
 
                     <CustomClickButton
                         btnStyle={{ backgroundColor: green, borderColor: white }}
-                        onPress={() => () => this.nextQuestion(true) }
+                        onPress={() => this.nextQuestion(true) }
                         disabled={this.state.quizFinished == true}
                     >
                         Correct
