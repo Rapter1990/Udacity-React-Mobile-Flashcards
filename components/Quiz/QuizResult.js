@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
-import { red,lightPurp  } from '../../utils/colors';
+import { gray, red, green,  azure ,lightPurp, white  } from '../../utils/colors';
+import CustomClickButton from "../component/CustomClickButton"
 
 class QuizResult extends Component {
 
 
     render() {
 
-        const {deck, navigation,percent, correctAnswer , incorrectAnswer, score } = this.props;
+        const {deck, handleReset, returnBack, percent, correctAnswer , incorrectAnswer, score } = this.props;
 
         return (
             <View>
@@ -19,6 +20,22 @@ class QuizResult extends Component {
                 <Text style={styles.questionText}>Correct Answer: {correctAnswer}</Text>
                 <Text style={styles.questionText}>Incorrect Answer: {incorrectAnswer}</Text>
                 <Text style={styles.questionText}>Score Percentage: {percent}</Text>
+
+                <CustomClickButton
+                        btnStyle={{ backgroundColor: green, borderColor: white }}
+                        onPress={() => handleReset()}
+                        disabled={this.state.quizFinished == true}
+                    >
+                        Reset Quiz
+                </CustomClickButton>
+
+                <CustomClickButton
+                        btnStyle={{ backgroundColor: green, borderColor: white }}
+                        onPress={() => returnBack()}
+                        disabled={this.state.quizFinished == true}
+                    >
+                        Go Back
+                </CustomClickButton>
           </View>
         );
     }

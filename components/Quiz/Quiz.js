@@ -47,11 +47,7 @@ class Quiz extends Component {
         const { navigation, deck } = this.props;
         const title = navigation.getParam('title', 'undefined');
         const questions = deck.questions;
-        const currentQuestion = "";
-
-        if(questions.length != 0) {
-            currentQuestion = questions[0].question;
-        }
+        const currentQuestion = questions.length != 0 ? questions[0].question : "";
 
         this.setState({
             title: title,
@@ -100,9 +96,12 @@ class Quiz extends Component {
                 })
 
             }
+
+
+            this.updateQuestion();
+
         }
         
-        this.updateQuestion();
     }
 
     updateQuestion = () => {
@@ -115,7 +114,7 @@ class Quiz extends Component {
             });
         } else {
             this.setState({
-              quizFinished: true
+                quizFinished: true
             })
         }
     }
@@ -132,13 +131,15 @@ class Quiz extends Component {
             return <QuizError />;
         }
 
+        console.log(this.state.quizFinished);
+
         if (this.state.quizFinished == true) {
             const { correctAnswer, incorrectAnswer , numberOfQuestions, score } = this.state;
             const scorePercentValue = ((correctAnswer / numberOfQuestions) * 100).toFixed(0);
             
             return (
                 <QuizResult
-                    deck={deck}
+                    deck={this.props.deck}
                     navigation={this.props.navigation}
                     handleReset={this.resetQuiz}
                     percent={scorePercentValue}
@@ -165,10 +166,12 @@ class Quiz extends Component {
                     <Text style={styles.questionText}>
                         {this.state.currentQuestion}
                     </Text>
+
                     <TextButton style={[styles.container, styles.buttonText]} 
                                 onPress={() => this.showAnswer()}>
-                                Answer
+                                Show Answer
                     </TextButton>
+
                     <Text style={styles.questionText}>
                           {this.state.currentAnswer}
                     </Text>
