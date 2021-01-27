@@ -33,7 +33,7 @@ class QuizResult extends Component {
 
                 <CustomClickButton
                         btnStyle={{ backgroundColor: green, borderColor: white }}
-                        onPress={() => handleReset()}
+                        onPress={() => handleReset}
                         disabled={this.state.status == true}
                     >
                         Reset Quiz
@@ -41,7 +41,7 @@ class QuizResult extends Component {
 
                 <CustomClickButton
                         btnStyle={{ backgroundColor: green, borderColor: white }}
-                        onPress={() => returnBack()}
+                        onPress={() => returnBack}
                         disabled={this.state.status == true}
                     >
                         Go Back
