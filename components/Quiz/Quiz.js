@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { clearLocalNotification, setLocalNotification } from '../../utils/notification';
 import QuizError from "./QuizError";
 import QuizResult from './QuizResult';
-import { gray, white, red, green,  azure  } from '../../utils/colors';
+import { black, white, red, green,  azure  } from '../../utils/colors';
 import CustomClickButton from "../component/CustomClickButton"
 import TextButton from "../component/TextButton"
 
@@ -56,7 +56,7 @@ class Quiz extends Component {
             questions: questions,
             numberOfQuestions: questions.length,
             quizFinished: false,
-            errorShow: false
+            errorShow: false,
         })
     }
 
@@ -68,22 +68,24 @@ class Quiz extends Component {
     }
 
     showAnswer = () => {
+
         if (this.state.currentAnswer === '')
           this.setState({
             currentAnswer: this.state.questions[this.state.questionNumber-1].answer,
+            errorShow: false
         })
     }
 
     nextQuestion = (isCorrect) => {
         
-        console.log(this.state);
-
+        
         if (this.state.currentAnswer === '') {
             this.setState({
                 errorShow: true
             });
         }
         else {
+
             if (isCorrect) {
 
                 this.setState({
@@ -129,11 +131,15 @@ class Quiz extends Component {
 
     render() {
 
-        if (this.state.numberOfQuestions === 0) {
+        const {numberOfQuestions, quizFinished } = this.state;
+
+        if (numberOfQuestions === 0) {
             return <QuizError />;
         }
 
-        if (this.state.quizFinished == true) {
+        console.log("quizFinished : ", quizFinished);
+
+        if (quizFinished === true) {
             const { correctAnswer, incorrectAnswer , numberOfQuestions, score } = this.state;
             const scorePercentValue = ((correctAnswer / numberOfQuestions) * 100).toFixed(0);
             
@@ -238,7 +244,7 @@ const styles = StyleSheet.create({
     questionText: {
         fontSize: 20,
         fontWeight: 'normal',
-        color: white,
+        color: black,
         paddingLeft: 20,
         paddingRight: 20,
         paddingTop: 20,
