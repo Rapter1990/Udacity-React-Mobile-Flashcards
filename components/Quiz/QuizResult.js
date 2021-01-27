@@ -10,15 +10,17 @@ class QuizResult extends Component {
         status: true
     }
 
-    render() {
-
-        const {deck, handleReset, returnBack, percent, correctAnswer , incorrectAnswer, score, quizFinished } = this.props;
-
-        if(quizFinished == true) {
+    componentDidMount() {
+        if(this.props.quizFinished == true) {
             this.setState({
                 status: false
             })
         }
+    }
+
+    render() {
+
+        const {deck, handleReset, returnBack, percent, correctAnswer , incorrectAnswer, score } = this.props;
 
         return (
             <View>
@@ -33,7 +35,7 @@ class QuizResult extends Component {
 
                 <CustomClickButton
                         btnStyle={{ backgroundColor: green, borderColor: white }}
-                        onPress={() => handleReset}
+                        onPress={() => handleReset()}
                         disabled={this.state.status == true}
                     >
                         Reset Quiz
@@ -41,7 +43,7 @@ class QuizResult extends Component {
 
                 <CustomClickButton
                         btnStyle={{ backgroundColor: green, borderColor: white }}
-                        onPress={() => returnBack}
+                        onPress={() => returnBack()}
                         disabled={this.state.status == true}
                     >
                         Go Back
