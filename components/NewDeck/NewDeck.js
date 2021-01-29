@@ -4,7 +4,7 @@ import { Text, View, StyleSheet, TextInput } from 'react-native';
 
 import { addDeck } from '../../actions/index';
 import CustomClickButton from '../component/CustomClickButton';
-import { white, purple, gray, lightPurp } from '../../utils/colors';
+import { white, orange, gray, lightPurp } from '../../utils/colors';
 
 class NewDeck extends Component {
 
@@ -45,7 +45,7 @@ class NewDeck extends Component {
           />
         </View>
         <CustomClickButton
-          btnStyle={{ backgroundColor: lightPurp, borderColor: white }}
+          btnStyle={{ backgroundColor: orange, borderColor: white }}
           onPress={this.handleSubmit}
           disabled={this.state.text === ''}
         >
@@ -63,14 +63,15 @@ const styles = StyleSheet.create({
       paddingLeft: 16,
       paddingRight: 16,
       paddingBottom: 16,
-      backgroundColor: purple
+      backgroundColor: lightPurp
     },
     block: {
       marginBottom: 20
     },
     title: {
       textAlign: 'center',
-      fontSize: 32
+      fontSize: 32,
+      color: white
     },
     input: {
       borderWidth: 1,
