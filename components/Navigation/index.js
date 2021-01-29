@@ -18,7 +18,7 @@ const Tabs = createBottomTabNavigator(
         navigationOptions: {
           title: 'FlashCards',
           tabBarLabel: 'Decks',
-          tabBarIcon: ({ tintColor }) => <Ionicons name={Platform.OS === 'ios' ? 'ios-play' : 'md-play'} size={30} color={tintColor}/>
+          tabBarIcon: ({ tintColor }) => <Ionicons name={Platform.OS === 'ios' ? 'ios-list' : 'md-list'} size={30} color={tintColor}/>
         }
       },
       NewDeck: {
