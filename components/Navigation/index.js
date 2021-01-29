@@ -8,7 +8,7 @@ import NewDeck from '../NewDeck/NewDeck';
 import DeckDetails from '../DeckDetails/DeckDetails';
 import NewCard from '../NewCard/NewCard';
 import Quiz from '../Quiz/Quiz';
-import {white , azure } from '../../utils/colors'
+import {white , azure, lightPurp } from '../../utils/colors'
 
 
 const Tabs = createBottomTabNavigator(
@@ -32,6 +32,7 @@ const Tabs = createBottomTabNavigator(
     },
       {
       tabBarOptions: {
+        activeTintColor: lightPurp,
         style: {
           backgroundColor: white,
         },
