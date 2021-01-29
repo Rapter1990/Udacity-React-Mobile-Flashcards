@@ -58,7 +58,7 @@ const MainNavigator = createStackNavigator({
         navigationOptions: {
           headerTintColor: white,
           headerStyle: {
-            backgroundColor: azure
+            backgroundColor: lightPurp
           }
         }
       },
@@ -67,7 +67,7 @@ const MainNavigator = createStackNavigator({
         navigationOptions: {
           headerTintColor: white,
           headerStyle: {
-            backgroundColor: azure
+            backgroundColor: lightPurp
           }
         }
       },
@@ -76,7 +76,7 @@ const MainNavigator = createStackNavigator({
         navigationOptions: {
           headerTintColor: white,
           headerStyle: {
-            backgroundColor: azure
+            backgroundColor: lightPurp
           }
         },
       },
