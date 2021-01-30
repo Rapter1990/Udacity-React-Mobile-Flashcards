@@ -1,6 +1,6 @@
 import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-import { createStackNavigator } from 'react-navigation-stack';
+import { createStackNavigator, StackViewTransitionConfigs } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
 import { Ionicons } from '@expo/vector-icons';
 import Decks from '../Decks/Decks';
@@ -9,7 +9,10 @@ import DeckDetails from '../DeckDetails/DeckDetails';
 import NewCard from '../NewCard/NewCard';
 import Quiz from '../Quiz/Quiz';
 import {white , azure, lightPurp, black } from '../../utils/colors'
+import { Animated, Easing } from 'react-native'
 
+/* The screens you add to IOS_MODAL_ROUTES will have the modal transition.  */
+const IOS_MODAL_ROUTES = ['OptionsScreen'];
 
 const Tabs = createBottomTabNavigator(
     {
@@ -50,7 +53,7 @@ Tabs.navigationOptions = ({ navigation }) => {
 };
 
 const MainNavigator = createStackNavigator({
-    Home: {
+      Home: {
         screen: Tabs,
       },
       DeckDetails: {
@@ -80,7 +83,33 @@ const MainNavigator = createStackNavigator({
           }
         },
       },
-    })
- 
-    
+  },
+  {
+    transitionConfig
+  }
+)
+
+const transitionConfig = () => {
+  return {
+    transitionSpec: {
+      duration: 750,
+      easing: Easing.out(Easing.poly(4)),
+      timing: Animated.timing,
+      useNativeDriver: true,
+    },
+    screenInterpolator: sceneProps => {
+      const { position, layout, scene } = sceneProps
+      const thisSceneIndex = scene.index
+      const width = layout.initWidth
+
+      const translateX = position.interpolate({
+        inputRange: [thisSceneIndex - 1, thisSceneIndex, thisSceneIndex + 1],
+        outputRange: [width, 0, 0]
+      })
+      const slideFromRight = { transform: [{ translateX }] }
+
+      return slideFromRight
+    },
+}}
+
 export default createAppContainer(MainNavigator);
