@@ -8,7 +8,7 @@ import NewDeck from '../NewDeck/NewDeck';
 import DeckDetails from '../DeckDetails/DeckDetails';
 import NewCard from '../NewCard/NewCard';
 import Quiz from '../Quiz/Quiz';
-import {white , azure, lightPurp } from '../../utils/colors'
+import {white , azure, lightPurp, black } from '../../utils/colors'
 
 
 const Tabs = createBottomTabNavigator(
@@ -56,9 +56,9 @@ const MainNavigator = createStackNavigator({
       DeckDetails: {
         screen: DeckDetails,
         navigationOptions: {
-          headerTintColor: white,
+          headerTintColor: black,
           headerStyle: {
-            backgroundColor: lightPurp
+            backgroundColor: white
           }
         }
       },
