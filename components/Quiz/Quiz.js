@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { clearLocalNotification, setLocalNotification } from '../../utils/notification';
 import QuizError from "./QuizError";
 import QuizResult from './QuizResult';
-import { black, white, red, green,  azure  } from '../../utils/colors';
+import { black, white, red, green, azure, lightPurp  } from '../../utils/colors';
 import CustomClickButton from "../component/CustomClickButton"
 import TextButton from "../component/TextButton"
 
@@ -159,10 +159,10 @@ class Quiz extends Component {
 
         return (
 
-            <View style={{flex:1, justifyContent: 'space-between'}}>
+            <View style={styles.mainView}>
                 <View style={styles.header}>
-                    <Text style={{fontSize: 20, alignItems: 'flex-start'}}>{this.state.title} Quiz</Text>
-                    <Text style={{fontSize: 20, alignItems: 'flex-end'}}>Score: {this.state.score}</Text>
+                    <Text style={{fontSize: 20, alignItems: 'flex-start' ,color: white}}>{this.state.title} Quiz</Text>
+                    <Text style={{fontSize: 20, alignItems: 'flex-end' ,color: white}}>Score: {this.state.score}</Text>
                 </View>
 
                 <View>
@@ -173,7 +173,7 @@ class Quiz extends Component {
                         {this.state.currentQuestion}
                     </Text>
 
-                    <TextButton style={[styles.container, styles.buttonText]} 
+                    <TextButton style={styles.buttonText} 
                                 onPress={() => this.showAnswer()}>
                                 Show Answer
                     </TextButton>
@@ -212,23 +212,14 @@ class Quiz extends Component {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        backgroundColor: azure,
-        borderRadius: Platform.OS === 'ios' ? 16 : 2,
-        padding: 20,
-        marginLeft: 10,
-        marginRight: 10,
-        marginTop: 17,
-        marginBottom: 17,
-        justifyContent: 'center',
-        alignItems: 'center',
-        shadowRadius: 3,
-        shadowOpacity: 0.8,
-        shadowColor: 'rgba(0, 0, 0, 0.24)',
-        shadowOffset: {
-          width: 0,
-          height: 3
-        },
+    mainView: {
+        flex:1,
+        justifyContent: 'space-between',
+        backgroundColor: lightPurp,
+        paddingTop: 16,
+        paddingLeft: 16,
+        paddingRight: 16,
+        paddingBottom: 16,
     },
     header: {
         flexDirection: 'row',
@@ -240,11 +231,12 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         paddingTop: 30,
         paddingBottom: 20,
+        color: white
     },
     questionText: {
         fontSize: 20,
         fontWeight: 'normal',
-        color: black,
+        color: white,
         paddingLeft: 20,
         paddingRight: 20,
         paddingTop: 20,
@@ -258,7 +250,10 @@ const styles = StyleSheet.create({
         backgroundColor: azure,
         paddingTop: 20,
         paddingBottom: 20,
-        padding: 20
+        padding: 20,
+        borderColor: white,
+        borderRadius: 5,
+        borderWidth: 1
     }
 });
 
