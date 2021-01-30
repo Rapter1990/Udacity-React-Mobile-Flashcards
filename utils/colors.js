@@ -9,3 +9,4 @@ export const pink = '#b93fb3'
 export const azure = '#007fff'
 export const green = "#00ff00"
 export const black = "#000000"
+export const customRedColor = "#ff1023"
