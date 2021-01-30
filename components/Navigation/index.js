@@ -65,18 +65,18 @@ const MainNavigator = createStackNavigator({
       NewCard: {
         screen: NewCard,
         navigationOptions: {
-          headerTintColor: white,
+          headerTintColor: black,
           headerStyle: {
-            backgroundColor: lightPurp
+            backgroundColor: white
           }
         }
       },
       Quiz: {
         screen: Quiz,
         navigationOptions: {
-          headerTintColor: white,
+          headerTintColor: black,
           headerStyle: {
-            backgroundColor: lightPurp
+            backgroundColor: white
           }
         },
       },
