@@ -84,9 +84,7 @@ const MainNavigator = createStackNavigator({
         },
       },
   },
-  {
-    transitionConfig
-  }
+  transitionConfig,
 )
 
 const transitionConfig = () => {
