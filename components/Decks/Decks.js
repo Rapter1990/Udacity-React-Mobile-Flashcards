@@ -17,6 +17,7 @@ class Decks extends Component {
         const { decks, navigation} = this.props;
 
         const deckListing = Object.values(decks).map(deck => {
+            
             return (
                 <TouchableOpacity
                     key={deck.title}
@@ -26,6 +27,7 @@ class Decks extends Component {
                 >
                   <Deck id={deck.title} />
                 </TouchableOpacity>
+                
             );
         })
 

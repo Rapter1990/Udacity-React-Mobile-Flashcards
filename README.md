@@ -17,9 +17,9 @@
      <td align="center"> Figure 3 </td>
   </tr>
   <tr>
-    <td><img width="800" height="200" src ="/screenshots/screenshot1.PNG"></td>
-    <td><img width="800" height="200" src ="/screenshots/screenshot2.PNG"></td>
-    <td><img width="800" height="200" src ="/screenshots/screenshot3.PNG"></td>
+    <td><img width="800" height="600" src ="/screenshots/screenshot1.PNG"></td>
+    <td><img width="800" height="600" src ="/screenshots/screenshot2.PNG"></td>
+    <td><img width="800" height="600" src ="/screenshots/screenshot3.PNG"></td>
   </tr>
   <tr>
      <td align="center"> Figure 4 </td>
@@ -27,9 +27,9 @@
      <td align="center"> Figure 6 </td>
   </tr>
   <tr>
-    <td><img width="800" height="200" src ="/screenshots/screenshot4.PNG"></td>
-    <td><img width="800" height="200" src ="/screenshots/screenshot5.PNG"></td>
-    <td><img width="800" height="200" src ="/screenshots/screenshot6.PNG"></td>
+    <td><img width="800" height="600" src ="/screenshots/screenshot4.PNG"></td>
+    <td><img width="800" height="600" src ="/screenshots/screenshot5.PNG"></td>
+    <td><img width="800" height="600" src ="/screenshots/screenshot6.PNG"></td>
   </tr>
   <tr>
      <td align="center"> Figure 7 </td>
@@ -37,9 +37,9 @@
      <td align="center"> Figure 9 </td>
   </tr>
   <tr>
-    <td><img width="800" height="200" src ="/screenshots/screenshot7.PNG"></td>
-    <td><img width="800" height="200" src ="/screenshots/screenshot8.PNG"></td>
-    <td><img width="800" height="200" src ="/screenshots/screenshot9.PNG"></td>
+    <td><img width="800" height="600" src ="/screenshots/screenshot7.PNG"></td>
+    <td><img width="800" height="600" src ="/screenshots/screenshot8.PNG"></td>
+    <td><img width="800" height="600" src ="/screenshots/screenshot9.PNG"></td>
   </tr>
 </table>
 </details>

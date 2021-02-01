@@ -20,7 +20,7 @@ class DeckDetails extends Component {
 
         return (
             <View style={styles.container}>
-              <Deck id={deck.title} />
+              <Deck id={deck && deck.title} />
               <View>
                 <CustomClickButton
                   btnStyle={{ backgroundColor: white, borderColor: gray }}
