@@ -67,7 +67,7 @@
  ┃📂actions        
  ┃ ┗📜index.js    
  ┃📂apk            
- ┃ ┗📜mobile-flashcards-53f216ba2f2942238c3ea0ad3196aa5e-signed.apk     
+ ┃ ┗📜mobile-flashcards-9e63c5b14f55492fa3438dca4bb1ee59-signed.apk         
  ┃📂screenshots                    
  ┃ ┗📜screenshot1.PNG          
  ┃ ┗📜screenshot2.PNG      
@@ -123,7 +123,7 @@
 ├── actions
 │   └── index.js # Provides actions and related handlers
 ├── apk
-│   └── mobile-flashcards-53f216ba2f2942238c3ea0ad3196aa5e-signed.apk # apk file of an app
+│   └── mobile-flashcards-9e63c5b14f55492fa3438dca4bb1ee59-signed.apk # apk file of an app
 ├── reducers
 │   └── index.js # Reducers for related actions
 ├── middleware
