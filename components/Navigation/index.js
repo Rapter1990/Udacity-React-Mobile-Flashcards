@@ -1,6 +1,6 @@
 import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-import { createStackNavigator, StackViewTransitionConfigs } from 'react-navigation-stack';
+import { createStackNavigator, TransitionPresets } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
 import { Ionicons } from '@expo/vector-icons';
 import Decks from '../Decks/Decks';
@@ -84,30 +84,11 @@ const MainNavigator = createStackNavigator({
         },
       },
   },
-  transitionConfig,
+  {
+    defaultNavigationOptions: {
+      ...TransitionPresets.SlideFromRightIOS, // https://reactnavigation.org/docs/4.x/stack-navigator/ -> TransitionPresets
+    },
+  }
 )
-
-const transitionConfig = () => {
-  return {
-    transitionSpec: {
-      duration: 750,
-      easing: Easing.out(Easing.poly(4)),
-      timing: Animated.timing,
-      useNativeDriver: true,
-    },
-    screenInterpolator: sceneProps => {
-      const { position, layout, scene } = sceneProps
-      const thisSceneIndex = scene.index
-      const width = layout.initWidth
-
-      const translateX = position.interpolate({
-        inputRange: [thisSceneIndex - 1, thisSceneIndex, thisSceneIndex + 1],
-        outputRange: [width, 0, 0]
-      })
-      const slideFromRight = { transform: [{ translateX }] }
-
-      return slideFromRight
-    },
-}}
 
 export default createAppContainer(MainNavigator);
