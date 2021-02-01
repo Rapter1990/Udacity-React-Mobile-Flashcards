@@ -10,16 +10,40 @@
 
 <details>
 <summary>Click here to show the live show of project</summary>
+<table style="border: 0px;">
+  <tr>
+     <td align="center"> Figure 1 </td>
+     <td align="center"> Figure 2 </td>
+     <td align="center"> Figure 3 </td>
+  </tr>
+  <tr>
+    <td><img width="800" height="200" src ="https://github.com/Rapter1990/Data-Visualization-Examples/blob/master/wii%20games%20and%20recommendation%20system/images/image1.png"></td>
+    <td><img width="800" height="200" src ="https://github.com/Rapter1990/Data-Visualization-Examples/blob/master/wii%20games%20and%20recommendation%20system/images/image2.png"></td>
+    <td><img width="800" height="200" src ="https://github.com/Rapter1990/Data-Visualization-Examples/blob/master/wii%20games%20and%20recommendation%20system/images/image3.png"></td>
+  </tr>
+  <tr>
+     <td align="center"> Figure 4 </td>
+     <td align="center"> Figure 5 </td>
+     <td align="center"> Figure 6 </td>
+  </tr>
+  <tr>
+    <td><img width="800" height="200" src ="https://github.com/Rapter1990/Data-Visualization-Examples/blob/master/wii%20games%20and%20recommendation%20system/images/image4.png"></td>
+    <td><img width="800" height="200" src ="https://github.com/Rapter1990/Data-Visualization-Examples/blob/master/wii%20games%20and%20recommendation%20system/images/image5.png"></td>
+    <td><img width="800" height="200" src ="https://github.com/Rapter1990/Data-Visualization-Examples/blob/master/wii%20games%20and%20recommendation%20system/images/image6.png"></td>
+  </tr>
+</table>
 </details>
 
 ## 📝 Using the App
 
 - Once started, the app will load any decks you have created. If no decks are present, you can load sample decks to test functionality.
-- A user can add a Deck.
-- A user can click a deck to see cards in that deck.
-- A user can add cards under a deck.
-- A user can quiz himself.
-- A user can delete a deck.
+- An user can add a Deck.
+- An user can click a deck to see cards in that deck.
+- An user can add cards under a deck.
+- An user can quiz himself.
+- An user can delete a deck.
+- When an user enter the quiz without containing quiz questions, the error page appears on the screen.
+- When an user answer question as "Incorrect" or "Correct" in quiz without clicking "Show Answer" button, the error message appears on the screen.
 
 ## 🔔 Notifications
 
