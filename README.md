@@ -30,14 +30,14 @@
 - App has been tested in Samsung Galaxy S7 emulator (Genymotion)
 
 ## 📂Project Structures  
- ┃📂actions    
- ┃ ┗📜index.js
- ┃📂apk        
- ┃ ┗📜mobile-flashcards-53f216ba2f2942238c3ea0ad3196aa5e-signed.apk               
- ┃📂components    
- ┃ ┗📂component    
- ┃ ┃ ┗📜CustomClickButton.js    
- ┃ ┃ ┗📜TextButton.js    
+ ┃📂actions        
+ ┃ ┗📜index.js    
+ ┃📂apk            
+ ┃ ┗📜mobile-flashcards-53f216ba2f2942238c3ea0ad3196aa5e-signed.apk                   
+ ┃📂components        
+ ┃ ┗📂component        
+ ┃ ┃ ┗📜CustomClickButton.js        
+ ┃ ┃ ┗📜TextButton.js        
  ┃ ┗📂Deck            
  ┃ ┃ ┗📜index.js     
  ┃ ┗📂DeckDetails    
