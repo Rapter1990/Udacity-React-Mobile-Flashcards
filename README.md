@@ -17,9 +17,9 @@
      <td align="center"> Figure 3 </td>
   </tr>
   <tr>
-    <td><img width="800" height="200" src ="https://github.com/Rapter1990/Data-Visualization-Examples/blob/master/wii%20games%20and%20recommendation%20system/images/image1.png"></td>
-    <td><img width="800" height="200" src ="https://github.com/Rapter1990/Data-Visualization-Examples/blob/master/wii%20games%20and%20recommendation%20system/images/image2.png"></td>
-    <td><img width="800" height="200" src ="https://github.com/Rapter1990/Data-Visualization-Examples/blob/master/wii%20games%20and%20recommendation%20system/images/image3.png"></td>
+    <td><img width="800" height="200" src ="/screenshots/screenshot1.PNG"></td>
+    <td><img width="800" height="200" src ="/screenshots/screenshot2.PNG"></td>
+    <td><img width="800" height="200" src ="/screenshots/screenshot3.PNG"></td>
   </tr>
   <tr>
      <td align="center"> Figure 4 </td>
@@ -27,9 +27,19 @@
      <td align="center"> Figure 6 </td>
   </tr>
   <tr>
-    <td><img width="800" height="200" src ="https://github.com/Rapter1990/Data-Visualization-Examples/blob/master/wii%20games%20and%20recommendation%20system/images/image4.png"></td>
-    <td><img width="800" height="200" src ="https://github.com/Rapter1990/Data-Visualization-Examples/blob/master/wii%20games%20and%20recommendation%20system/images/image5.png"></td>
-    <td><img width="800" height="200" src ="https://github.com/Rapter1990/Data-Visualization-Examples/blob/master/wii%20games%20and%20recommendation%20system/images/image6.png"></td>
+    <td><img width="800" height="200" src ="/screenshots/screenshot4.PNG"></td>
+    <td><img width="800" height="200" src ="/screenshots/screenshot5.PNG"></td>
+    <td><img width="800" height="200" src ="/screenshots/screenshot6.PNG"></td>
+  </tr>
+  <tr>
+     <td align="center"> Figure 7 </td>
+     <td align="center"> Figure 8 </td>
+     <td align="center"> Figure 9 </td>
+  </tr>
+  <tr>
+    <td><img width="800" height="200" src ="/screenshots/screenshot7.PNG"></td>
+    <td><img width="800" height="200" src ="/screenshots/screenshot8.PNG"></td>
+    <td><img width="800" height="200" src ="/screenshots/screenshot9.PNG"></td>
   </tr>
 </table>
 </details>
@@ -57,7 +67,17 @@
  ┃📂actions        
  ┃ ┗📜index.js    
  ┃📂apk            
- ┃ ┗📜mobile-flashcards-53f216ba2f2942238c3ea0ad3196aa5e-signed.apk                   
+ ┃ ┗📜mobile-flashcards-53f216ba2f2942238c3ea0ad3196aa5e-signed.apk     
+ ┃📂screenshots                    
+ ┃ ┗📜screenshot1.PNG          
+ ┃ ┗📜screenshot2.PNG      
+ ┃ ┗📜screenshot3.PNG      
+ ┃ ┗📜screenshot4.PNG      
+ ┃ ┗📜screenshot5.PNG      
+ ┃ ┗📜screenshot6.PNG    
+ ┃ ┗📜screenshot7.PNG    
+ ┃ ┗📜screenshot8.PNG        
+ ┃ ┗📜screenshot9.PNG                      
  ┃📂components        
  ┃ ┗📂component        
  ┃ ┃ ┗📜CustomClickButton.js        
@@ -114,10 +134,20 @@
 │   ├── api.js # Provides CRUD methods for decks and cards
 │   └── colors.js # Colors used system-wide
 │   └── notificatons.js # Helper methods to manage local notifications
+├── screenshots
+│   ├── screenshot1.PNG 
+│   ├── screenshot2.PNG  
+│   └── screenshot3.PNG  
+│   └── screenshot4.PNG  
+│   └── screenshot5.PNG  
+│   └── screenshot6.PNG  
+│   └── screenshot7.PNG  
+│   └── screenshot8.PNG  
+│   └── screenshot9.PNG  
 └── components
     ├── component
-    │    ├── CustomClickButton.js
-    │    ├── TextButton.js                
+    │    ├── CustomClickButton.js # A custom component for button
+    │    ├── TextButton.js  # A custom component for text button              
     ├── Deck
     │    ├── index.js # A component to display an information of deck listed in Decks Component
     ├── DeckDetails
