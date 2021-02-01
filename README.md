@@ -31,7 +31,9 @@
 
 ## 📂Project Structures  
  ┃📂actions    
- ┃ ┗📜index.js           
+ ┃ ┗📜index.js
+ ┃📂apk    
+ ┃ ┗📜mobile-flashcards-53f216ba2f2942238c3ea0ad3196aa5e-signed.apk           
  ┃📂components    
  ┃ ┗📂component    
  ┃ ┃ ┗📜CustomClickButton.js    
@@ -76,6 +78,8 @@
 ├── store.js # Combines reducer and middleware to show log
 ├── actions
 │   └── index.js # Provides actions and related handlers
+├── apk
+│   └── mobile-flashcards-53f216ba2f2942238c3ea0ad3196aa5e-signed.apk # apk file of an app
 ├── reducers
 │   └── index.js # Reducers for related actions
 ├── middleware
