@@ -1,5 +1,17 @@
 # Mobile Flash Card
 
+### Screenshoots
+
+<details>
+<summary>Click here to show the screenshoots of project</summary>
+</details>
+
+### Live Show
+
+<details>
+<summary>Click here to show the live show of project</summary>
+</details>
+
 ## 📝 Using the App
 
 - Once started, the app will load any decks you have created. If no decks are present, you can load sample decks to test functionality.
@@ -61,6 +73,7 @@
 ├── index.js # Used for DOM rendering only.
 ├── package.json # Manager file of npm package.
 ├── App.js # This is the root of the app. Contains root view and navigational components.
+├── store.js # Combines reducer and middleware to show log
 ├── actions
 │   └── index.js # Provides actions and related handlers
 ├── reducers
