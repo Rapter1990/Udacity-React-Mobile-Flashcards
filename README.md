@@ -32,8 +32,8 @@
 ## 📂Project Structures  
  ┃📂actions    
  ┃ ┗📜index.js
- ┃📂apk    
- ┃ ┗📜mobile-flashcards-53f216ba2f2942238c3ea0ad3196aa5e-signed.apk           
+ ┃📂apk        
+ ┃ ┗📜mobile-flashcards-53f216ba2f2942238c3ea0ad3196aa5e-signed.apk               
  ┃📂components    
  ┃ ┗📂component    
  ┃ ┃ ┗📜CustomClickButton.js    
