@@ -5,7 +5,7 @@
 <details>
 <summary>Click here to show the screenshoots of project</summary>
   <video width="320" height="240" autoplay>
-    <source src="./livedemo/livedemo.webm" type="video/webm">
+    <source src="./livedemo/livedemo.mp4" type="video/mp4">
   </video>
 </details>
 
@@ -71,8 +71,8 @@
  ┃ ┗📜index.js    
  ┃📂apk            
  ┃ ┗📜mobile-flashcards-9e63c5b14f55492fa3438dca4bb1ee59-signed.apk    
- ┃📂livedemo                    
- ┃ ┗📜livedemo.webm              
+ ┃📂livedemo                        
+ ┃ ┗📜livedemo.mp4                  
  ┃📂screenshots                    
  ┃ ┗📜screenshot1.PNG          
  ┃ ┗📜screenshot2.PNG      
@@ -130,7 +130,7 @@
 ├── apk
 │   └── mobile-flashcards-9e63c5b14f55492fa3438dca4bb1ee59-signed.apk # apk file of an app
 ├── livedemo
-│   └── livedemo.webm # live demo of app
+│   └── livedemo.mp4 # live demo of app
 ├── reducers
 │   └── index.js # Reducers for related actions
 ├── middleware
