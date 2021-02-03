@@ -4,7 +4,7 @@
 
 <details>
 <summary>Click here to show the live show of project</summary>
-![Live Demo]("./livedemo/livedemo.gif")
+  ![Live Demo](./livedemo/livedemo.gif)
 </details>
 
 ### Screenshoots
