@@ -3,16 +3,14 @@
 ### Live Show
 
 <details>
-<summary>Click here to show the screenshoots of project</summary>
-  <video width="320" height="240" controls autoplay>
-    <source src="./livedemo/livedemo.mp4" type="video/mp4">
-  </video>
+<summary>Click here to show the live show of project</summary>
+![Live Demo]("./livedemo/livedemo.gif")
 </details>
 
 ### Screenshoots
 
 <details>
-<summary>Click here to show the live show of project</summary>
+<summary>Click here to show the screenshots of project</summary>
 <table style="border: 0px;">
   <tr>
      <td align="center"> Figure 1 </td>
@@ -72,7 +70,7 @@
  ┃📂apk            
  ┃ ┗📜mobile-flashcards-9e63c5b14f55492fa3438dca4bb1ee59-signed.apk    
  ┃📂livedemo                        
- ┃ ┗📜livedemo.mp4                  
+ ┃ ┗📜livedemo.gif                      
  ┃📂screenshots                    
  ┃ ┗📜screenshot1.PNG          
  ┃ ┗📜screenshot2.PNG      
@@ -130,7 +128,7 @@
 ├── apk
 │   └── mobile-flashcards-9e63c5b14f55492fa3438dca4bb1ee59-signed.apk # apk file of an app
 ├── livedemo
-│   └── livedemo.mp4 # live demo of app
+│   └── livedemo.gif # live demo of app
 ├── reducers
 │   └── index.js # Reducers for related actions
 ├── middleware
