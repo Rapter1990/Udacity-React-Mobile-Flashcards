@@ -1,15 +1,15 @@
 # Mobile Flash Card
 
-### Screenshoots
+### Live Show
 
 <details>
 <summary>Click here to show the screenshoots of project</summary>
-  <video width="320" height="240" autoplay>
+  <video width="320" height="240" controls autoplay>
     <source src="./livedemo/livedemo.mp4" type="video/mp4">
   </video>
 </details>
 
-### Live Show
+### Screenshoots
 
 <details>
 <summary>Click here to show the live show of project</summary>
