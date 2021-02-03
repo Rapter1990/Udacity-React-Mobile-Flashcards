@@ -4,7 +4,7 @@
 
 <details>
 <summary>Click here to show the live show of project</summary>
-  ![Live Demo](./livedemo/livedemo.gif)
+  <img src="./livedemo/livedemo.gif" alt="this slowpoke moves" width="800" height="600" alt="400 image"/>
 </details>
 
 ### Screenshoots
