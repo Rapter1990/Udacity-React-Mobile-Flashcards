@@ -48,17 +48,17 @@
 ## 📝 Using the App
 
 - Once started, the app will load any decks you have created. If no decks are present, you can load sample decks to test functionality.
-- An user can add a Deck.
-- An user can click a deck to see cards in that deck.
-- An user can add cards under a deck.
-- An user can quiz himself.
-- An user can delete a deck.
-- When an user enter the quiz without containing quiz questions, the error page appears on the screen.
-- When an user answer question as "Incorrect" or "Correct" in quiz without clicking "Show Answer" button, the error message appears on the screen.
+- A user can add a Deck.
+- A user can click a deck to see cards in that deck.
+- A user can add cards under a deck.
+- A user can quiz himself.
+- A user can delete a deck.
+- When a user enter the quiz without containing quiz questions, the error page appears on the screen.
+- When a user answer question as "Incorrect" or "Correct" in quiz without clicking "Show Answer" button, the error message appears on the screen.
 
 ## 🔔 Notifications
 
-- The app will set a daily reminder that will be triggered if you have not started any quizzes that day. The notification will trigger between 8:20 PM.
+- The app will set a daily reminder that will be triggered if you have not started any quizzes that day. The notification will trigger at 8:20 PM.
 - Starting a quiz resets the notification for the following day.
 
 ## TESTING
